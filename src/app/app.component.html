@@ -1,3 +1,7 @@
 <h1>{{ message }} {{ userName }} from BridgeLabz</h1>
+
 <img [src]="imgUrl" alt="BridgeLabz Logo" width="200" (click)="launchBridgeLabz()" style="cursor: pointer;">
-<input type="text" [(ngModel)]="userName" placeholder="Enter your name">
+
+<input type="text" [(ngModel)]="userName" (input)="validateUserName()" placeholder="Enter your name">
+
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
